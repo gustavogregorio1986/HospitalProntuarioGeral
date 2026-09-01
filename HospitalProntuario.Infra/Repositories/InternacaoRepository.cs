@@ -1,5 +1,7 @@
 ﻿using HospitalProntuario.Domain.Domain;
+using HospitalProntuario.Infra.Context;
 using HospitalProntuario.Infra.Repositories.Interface;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,39 +12,21 @@ namespace HospitalProntuario.Infra.Repositories
 {
     public class InternacaoRepository : IInternacaoRepository
     {
-        public Task AddAsync(Internacao internacao)
+        private readonly AppDbContext _context;
+
+        public InternacaoRepository(AppDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task<IEnumerable<Internacao>> BuscarPorPacienteIdAsync(int pacienteId)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<Internacao> GetByIdAsync(int id) => await _context.Internacoes.FindAsync(id);
+        public async Task<IEnumerable<Internacao>> GetAllAsync() => await _context.Internacoes.ToListAsync();
+        public async Task AddAsync(Internacao internacao) => await _context.Internacoes.AddAsync(internacao);
+        public void Update(Internacao internacao) => _context.Internacoes.Update(internacao);
+        public void Delete(Internacao internacao) => _context.Internacoes.Remove(internacao);
+        public async Task SaveChangesAsync() => await _context.SaveChangesAsync();
 
-        public void Delete(Internacao internacao)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<Internacao>> GetAllAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Internacao> GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task SaveChangesAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Internacao internacao)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<IEnumerable<Internacao>> BuscarPorPacienteIdAsync(int pacienteId) =>
+            await _context.Internacoes.Where(i => i.PacienteId == pacienteId).ToListAsync();
     }
 }

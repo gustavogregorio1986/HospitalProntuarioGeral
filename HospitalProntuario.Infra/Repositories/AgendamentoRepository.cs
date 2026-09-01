@@ -1,5 +1,7 @@
 ﻿using HospitalProntuario.Domain.Domain;
+using HospitalProntuario.Infra.Context;
 using HospitalProntuario.Infra.Repositories.Interface;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,39 +12,21 @@ namespace HospitalProntuario.Infra.Repositories
 {
     public class AgendamentoRepository : IAgendamentoRepository
     {
-        public Task AddAsync(Agendamento agendamento)
+        private readonly AppDbContext _context;
+
+        public AgendamentoRepository(AppDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task<IEnumerable<Agendamento>> BuscarPorPacienteIdAsync(int pacienteId)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<Agendamento> GetByIdAsync(int id) => await _context.Agendamentos.FindAsync(id);
+        public async Task<IEnumerable<Agendamento>> GetAllAsync() => await _context.Agendamentos.ToListAsync();
+        public async Task AddAsync(Agendamento agendamento) => await _context.Agendamentos.AddAsync(agendamento);
+        public void Update(Agendamento agendamento) => _context.Agendamentos.Update(agendamento);
+        public void Delete(Agendamento agendamento) => _context.Agendamentos.Remove(agendamento);
+        public async Task SaveChangesAsync() => await _context.SaveChangesAsync();
 
-        public void Delete(Agendamento agendamento)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<Agendamento>> GetAllAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Agendamento> GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task SaveChangesAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Agendamento agendamento)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<IEnumerable<Agendamento>> BuscarPorPacienteIdAsync(int pacienteId) =>
+            await _context.Agendamentos.Where(a => a.PacienteId == pacienteId).ToListAsync();
     }
 }

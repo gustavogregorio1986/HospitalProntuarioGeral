@@ -1,5 +1,7 @@
 ﻿using HospitalProntuario.Domain.Domain;
+using HospitalProntuario.Infra.Context;
 using HospitalProntuario.Infra.Repositories.Interface;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,39 +12,21 @@ namespace HospitalProntuario.Infra.Repositories
 {
     public class MedicoRepository : IMedicoRepository
     {
-        public Task AddAsync(Medico medico)
+        private readonly AppDbContext _context;
+
+        public MedicoRepository(AppDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task<IEnumerable<Medico>> BuscarPorEspecialidadeAsync(string especialidade)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<Medico> GetByIdAsync(int id) => await _context.Medicos.FindAsync(id);
+        public async Task<IEnumerable<Medico>> GetAllAsync() => await _context.Medicos.ToListAsync();
+        public async Task AddAsync(Medico medico) => await _context.Medicos.AddAsync(medico);
+        public void Update(Medico medico) => _context.Medicos.Update(medico);
+        public void Delete(Medico medico) => _context.Medicos.Remove(medico);
+        public async Task SaveChangesAsync() => await _context.SaveChangesAsync();
 
-        public void Delete(Medico medico)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<Medico>> GetAllAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Medico> GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task SaveChangesAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Medico medico)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<IEnumerable<Medico>> BuscarPorEspecialidadeAsync(string especialidade) =>
+            await _context.Medicos.Where(m => m.Especialidade == especialidade).ToListAsync();
     }
 }

@@ -14,7 +14,7 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(buil
 
 
 builder.Services.AddScoped<IAgendamentoRepository, AgendamentoRepository>();
-builder.Services.AddScoped<ICirurgiaReposity, CiirurgiaReposity>();
+builder.Services.AddScoped<ICirurgiaReposity, CirurgiaReposity>();
 builder.Services.AddScoped<IInternacaoRepository, InternacaoRepository>();
 builder.Services.AddScoped<IMedicoRepository, MedicoRepository>();
 builder.Services.AddScoped<IPacienteRepository, PacienteRepository>();

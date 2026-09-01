@@ -22,10 +22,10 @@ namespace HospitalProntuario.Infra.Mappings
                    .WithMany(p => p.Cirurgias)
                    .HasForeignKey("PacienteId");
 
-            // Relacionamento com Medico
             builder.HasOne(c => c.Medico)
                    .WithMany(m => m.Cirurgias)
-                   .HasForeignKey("MedicoId");
+                   .HasForeignKey(c => c.MedicoId);
+
         }
     }
 }
