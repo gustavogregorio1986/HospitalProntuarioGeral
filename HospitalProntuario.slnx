@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/Domain/">
+    <Project Path="HospitalProntuario.Domain/HospitalProntuario.Domain.csproj" />
+  </Folder>
+  <Folder Name="/Infra/">
+    <Project Path="HospitalProntuario.Infra/HospitalProntuario.Infra.csproj" />
+  </Folder>
+  <Folder Name="/Services/">
+    <Project Path="HospitalProntuario.Services/HospitalProntuario.Services.csproj" />
+  </Folder>
+  <Folder Name="/Web/">
+    <Project Path="HospitalProntuario.Web/HospitalProntuario.Web.csproj" />
+  </Folder>
+</Solution>
