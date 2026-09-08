@@ -1,5 +1,4 @@
 ﻿using HospitalProntuario.Domain.Domain;
-using HospitalProntuario.Domain.Domain.Repositories.Interface;
 using HospitalProntuario.Domain.Repositories.Interface;
 using HospitalProntuario.Domain.Services;
 using System;

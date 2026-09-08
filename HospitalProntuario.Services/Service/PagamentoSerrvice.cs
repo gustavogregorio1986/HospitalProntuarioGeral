@@ -1,5 +1,4 @@
 ﻿using HospitalProntuario.Domain.Domain;
-using HospitalProntuario.Application.Services.Interface;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
