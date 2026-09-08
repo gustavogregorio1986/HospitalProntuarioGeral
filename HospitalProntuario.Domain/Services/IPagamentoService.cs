@@ -1,21 +1,19 @@
-﻿using System;
+﻿using HospitalProntuario.Domain.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HospitalProntuario.Domain.Domain.Repositories.Interface
+namespace HospitalProntuario.Domain.Services
 {
-    public interface IPagamentoRepository
+    public interface IPagamentoService
     {
         Task<Pagamento> GetByIdAsync(int id);
         Task<IEnumerable<Pagamento>> GetAllAsync();
         Task AddAsync(Pagamento pagamento);
-        void Update(Pagamento pagamento);
-        void Delete(Pagamento pagamento);
-        Task SaveChangesAsync();
-
-        // Método específico
+        Task UpdateAsync(Pagamento pagamento);
+        Task DeleteAsync(int id);
         Task<IEnumerable<Pagamento>> BuscarPorPacienteIdAsync(int pacienteId);
     }
 }

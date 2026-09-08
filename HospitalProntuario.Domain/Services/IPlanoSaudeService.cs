@@ -5,18 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HospitalProntuario.Infra.Repositories.Interface
+namespace HospitalProntuario.Domain.Services
 {
-    public interface IPlanoSaudeRepository
+    public interface IPlanoSaudeService
     {
         Task<PlanoSaude> GetByIdAsync(int id);
         Task<IEnumerable<PlanoSaude>> GetAllAsync();
         Task AddAsync(PlanoSaude planoSaude);
-        void Update(PlanoSaude planoSaude);
-        void Delete(PlanoSaude planoSaude);
-        Task SaveChangesAsync();
-
-        // Método específico
-        Task<PlanoSaude> BuscarPorNomeAsync(string nome);
+        Task UpdateAsync(PlanoSaude planoSaude);
+        Task DeleteAsync(int id);
     }
 }

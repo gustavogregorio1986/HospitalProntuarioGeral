@@ -1,7 +1,7 @@
-﻿using HospitalProntuario.Application.Services.Interface;
-using HospitalProntuario.Domain.Domain;
+﻿using HospitalProntuario.Domain.Domain;
 using HospitalProntuario.Domain.Domain.Repositories.Interface;
-using HospitalProntuario.Infra.Repositories.Interface;
+using HospitalProntuario.Domain.Repositories.Interface;
+using HospitalProntuario.Domain.Services;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

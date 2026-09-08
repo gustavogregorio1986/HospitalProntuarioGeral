@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace HospitalProntuario.Domain.Interfaces
+namespace HospitalProntuario.Domain.Repositories.Interface
 {
     public interface IPacienteRepository
     {

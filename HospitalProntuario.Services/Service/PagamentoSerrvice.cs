@@ -1,9 +1,10 @@
 ﻿using HospitalProntuario.Domain.Domain;
-using HospitalProntuario.Domain.Domain.Repositories.Interface;
 using HospitalProntuario.Application.Services.Interface;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using HospitalProntuario.Domain.Repositories.Interface;
+using HospitalProntuario.Domain.Services;
 
 namespace HospitalProntuario.Application.Services
 {

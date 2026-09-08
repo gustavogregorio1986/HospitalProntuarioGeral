@@ -1,6 +1,5 @@
 ﻿using HospitalProntuario.Domain.Domain;
-using HospitalProntuario.Domain.Domain.Repositories.Interface;
-using HospitalProntuario.Domain.Interfaces;
+using HospitalProntuario.Domain.Repositories.Interface;
 using HospitalProntuario.Infra.Context;
 using Microsoft.EntityFrameworkCore;
 using System;

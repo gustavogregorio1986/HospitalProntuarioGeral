@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HospitalProntuario.Domain.Domain.Service.Interface
+namespace HospitalProntuario.Domain.Services
 {
-    public interface IPacienteService
+    public interface IAgendamentoService
     {
     }
 }

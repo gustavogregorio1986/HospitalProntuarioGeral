@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HospitalProntuario.Infra.Repositories.Interface
+namespace HospitalProntuario.Domain.Repositories.Interface
 {
     public interface IAgendamentoRepository
     {

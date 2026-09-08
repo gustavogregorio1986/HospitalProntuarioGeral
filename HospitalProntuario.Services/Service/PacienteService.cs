@@ -1,6 +1,7 @@
 ﻿using HospitalProntuario.Domain.Domain;
 using HospitalProntuario.Domain.Domain.Service.Interface;
-using HospitalProntuario.Domain.Interfaces;
+using HospitalProntuario.Domain.Repositories.Interface;
+using HospitalProntuario.Domain.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
