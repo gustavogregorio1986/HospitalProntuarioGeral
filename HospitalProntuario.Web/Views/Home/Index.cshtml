@@ -1,8 +1,56 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Início";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-4 mb-3 text-primary">🏥 Hospital Prontuário</h1>
+        <p class="lead text-secondary">
+            Bem-vindo ao sistema de gestão hospitalar — controle pacientes, médicos, internações e planos de saúde com eficiência.
+        </p>
+        <hr class="my-4" />
+        <div class="d-flex justify-content-center gap-3 mt-4">
+            <a class="btn btn-outline-primary btn-lg" asp-page="/Pacientes">
+                👨‍⚕️ Pacientes
+            </a>
+            <a class="btn btn-outline-success btn-lg" asp-page="/Medicos">
+                🩺 Médicos
+            </a>
+            <a class="btn btn-outline-info btn-lg" asp-page="/Internacoes">
+                🏥 Internações
+            </a>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-primary">Relatórios</h5>
+                    <p class="card-text text-muted">Visualize estatísticas e relatórios de pacientes e atendimentos.</p>
+                    <a href="#" class="btn btn-primary">Acessar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-success">Financeiro</h5>
+                    <p class="card-text text-muted">Gerencie pagamentos, planos e faturamento hospitalar.</p>
+                    <a href="#" class="btn btn-success">Acessar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-info">Configurações</h5>
+                    <p class="card-text text-muted">Personalize o sistema conforme as necessidades da instituição.</p>
+                    <a href="#" class="btn btn-info">Acessar</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
