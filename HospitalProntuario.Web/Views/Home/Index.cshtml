@@ -10,14 +10,14 @@
         </p>
         <hr class="my-4" />
         <div class="d-flex justify-content-center gap-3 mt-4">
-            <a class="btn btn-outline-primary btn-lg" asp-page="/Pacientes">
+            <a class="btn btn-outline-primary btn-lg" asp-controller="Paciente" asp-action="ListarDePacientes">
                 👨‍⚕️ Pacientes
             </a>
-            <a class="btn btn-outline-success btn-lg" asp-page="/Medicos">
+            <a class="btn btn-outline-success btn-lg" asp-controller="Medico" asp-action="ListarDeMedicos">
                 🩺 Médicos
             </a>
-            <a class="btn btn-outline-info btn-lg" asp-page="/Internacoes">
-                🏥 Internações
+            <a class="btn btn-outline-info btn-lg" asp-controller="PlanoDeSaude" asp-action="ListarDePlanos">
+                📋 Planos de Saúde
             </a>
         </div>
     </div>
