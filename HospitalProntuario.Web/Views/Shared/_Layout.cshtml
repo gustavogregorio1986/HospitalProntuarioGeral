@@ -19,8 +19,10 @@
                     <summary>👥 Administração</summary>
 
                     <div class="submenu">
-                        <a asp-page="/Usuarios">Usuários</a>
-                        <a asp-page="/Recepcionistas">Recepcionistas</a>
+                        <a asp-controller="Usuario" asp-action="ListarUsuarios">Usuários</a>
+                        <a asp-controller="Usuario" asp-action="ListarDeRecepcionistas">Recepcionistas</a>
+                        <a asp-controller="Usuario" asp-action="CadastroDeUsuario"> cadastrar usuario</a>
+                        <a asp-controller="Usuario" asp-action="CadastroDeRecepcionistas">Cadastrar Recepcionistas</a>
                     </div>
                 </details>
 
