@@ -10,16 +10,74 @@
 </head>
 <body>
     <header>
-        <!-- Menu lateral -->
         <div class="sidebar">
-            <nav>
+            <nav class="menu">
+
                 <a asp-page="/Index">🏠 Home</a>
-                <a asp-page="/Pacientes">👨‍⚕️ Pacientes</a>
-                <a asp-page="/Medicos">🩺 Médicos</a>
-                <a asp-page="/Internacoes">🏥 Internações</a>
-                <a asp-page="/Cirurgias">🔪 Cirurgias</a>
-                <a asp-page="/Pagamentos">💳 Pagamentos</a>
-                <a asp-page="/Planos">📋 Planos de Saúde</a>
+
+                <details>
+                    <summary>👥 Administração</summary>
+
+                    <div class="submenu">
+                        <a asp-page="/Usuarios">Usuários</a>
+                        <a asp-page="/Recepcionistas">Recepcionistas</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>👨‍⚕️ Pacientes</summary>
+
+                    <div class="submenu">
+                        <a asp-page="/Pacientes">Listar</a>
+                        <a asp-page="/Pacientes/Create">Cadastrar</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>🩺 Médicos</summary>
+
+                    <div class="submenu">
+                        <a asp-page="/Medicos">Listar</a>
+                        <a asp-page="/Medicos/Create">Cadastrar</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>🏥 Internações</summary>
+
+                    <div class="submenu">
+                        <a asp-page="/Internacoes">Listar</a>
+                        <a asp-page="/Internacoes/Create">Nova Internação</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>🔪 Cirurgias</summary>
+
+                    <div class="submenu">
+                        <a asp-page="/Cirurgias">Listar</a>
+                        <a asp-page="/Cirurgias/Create">Cadastrar</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>💳 Pagamentos</summary>
+
+                    <div class="submenu">
+                        <a asp-page="/Pagamentos">Listar</a>
+                        <a asp-page="/Pagamentos/Create">Novo Pagamento</a>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📋 Planos de Saúde</summary>
+
+                    <div class="submenu">
+                        <a asp-page="/Planos">Listar</a>
+                        <a asp-page="/Planos/Create">Cadastrar</a>
+                    </div>
+                </details>
+
             </nav>
         </div>
     </header>
