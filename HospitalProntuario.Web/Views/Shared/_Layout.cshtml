@@ -30,8 +30,8 @@
                     <summary>👨‍⚕️ Pacientes</summary>
 
                     <div class="submenu">
-                        <a asp-page="/Pacientes">Listar</a>
-                        <a asp-page="/Pacientes/Create">Cadastrar</a>
+                        <a asp-controller="Paciente" asp-action="ListarDePacientes">Listar Pacientes</a>
+                        <a asp-controller="Paciente" asp-action="CadastroDePaciente">Cadastrar Paciente</a>
                     </div>
                 </details>
 
@@ -39,8 +39,8 @@
                     <summary>🩺 Médicos</summary>
 
                     <div class="submenu">
-                        <a asp-page="/Medicos">Listar</a>
-                        <a asp-page="/Medicos/Create">Cadastrar</a>
+                        <a asp-controller="Medico" asp-action="ListarDeMedicos">Listar Médicos</a>
+                        <a asp-controller="Medico" asp-action="CadastroDeMedico">Cadastrar Médico</a>
                     </div>
                 </details>
 
@@ -48,8 +48,8 @@
                     <summary>🏥 Internações</summary>
 
                     <div class="submenu">
-                        <a asp-page="/Internacoes">Listar</a>
-                        <a asp-page="/Internacoes/Create">Nova Internação</a>
+                        <a asp-controller="Internacao" asp-action="ListarDeInternacoes">Listar Internações</a>
+                        <a asp-controller="Internacao" asp-action="CadastroDeInternacao">Nova Internação</a>
                     </div>
                 </details>
 
@@ -57,8 +57,8 @@
                     <summary>🔪 Cirurgias</summary>
 
                     <div class="submenu">
-                        <a asp-page="/Cirurgias">Listar</a>
-                        <a asp-page="/Cirurgias/Create">Cadastrar</a>
+                        <a asp-controller="Cirurgia" asp-action="ListarDeCirurgias">Listar Cirurgias</a>
+                        <a asp-controller="Cirurgia" asp-action="CadastroDeCirurgia">Cadastrar Cirurgia</a>
                     </div>
                 </details>
 
@@ -66,8 +66,8 @@
                     <summary>💳 Pagamentos</summary>
 
                     <div class="submenu">
-                        <a asp-page="/Pagamentos">Listar</a>
-                        <a asp-page="/Pagamentos/Create">Novo Pagamento</a>
+                        <a asp-controller="Pagamento" asp-action="ListarDePagamentos">Listar Pagamentos</a>
+                        <a asp-controller="Pagamento" asp-action="CadastroDePagamento">Novo Pagamento</a>
                     </div>
                 </details>
 
@@ -75,8 +75,8 @@
                     <summary>📋 Planos de Saúde</summary>
 
                     <div class="submenu">
-                        <a asp-page="/Planos">Listar</a>
-                        <a asp-page="/Planos/Create">Cadastrar</a>
+                        <a asp-controller="PlanoDeSaude" asp-action="ListarDePlanos">Listar</a>
+                        <a asp-controller="PlanoDeSaude" asp-action="CadastroDePlano">Cadastrar</a>
                     </div>
                 </details>
 
