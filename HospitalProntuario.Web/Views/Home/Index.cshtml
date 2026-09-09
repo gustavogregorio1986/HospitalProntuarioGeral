@@ -38,7 +38,7 @@
                 <div class="card-body text-center">
                     <h5 class="card-title text-success">Financeiro</h5>
                     <p class="card-text text-muted">Gerencie pagamentos, planos e faturamento hospitalar.</p>
-                    <a href="#" class="btn btn-success">Acessar</a>
+                    <a class="btn btn-success" asp-controller="Financeiro" asp-action="PagamentoFinanceiro">Acessar</a>
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@
                 <div class="card-body text-center">
                     <h5 class="card-title text-info">Configurações</h5>
                     <p class="card-text text-muted">Personalize o sistema conforme as necessidades da instituição.</p>
-                    <a href="#" class="btn btn-info">Acessar</a>
+                    <a asp-controller="Configuracao" asp-action="ConfiguracaoPadrao" class="btn btn-info">Acessar</a>
                 </div>
             </div>
         </div>
