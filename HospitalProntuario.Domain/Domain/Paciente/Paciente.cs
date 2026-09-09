@@ -17,9 +17,7 @@ namespace HospitalProntuario.Domain.Domain
 
         public PlanoSaude? PlanoSaude { get; set; } // navegação
 
-        public int? PlanoSaudeId { get; set; }   // chave estrangeira
-
-        public int PacienteId { get; set; }
+        public int PlanoSaudeId { get; set; } // navegação
 
         // Relacionamentos
         public PlanoSaude? Plano { get; set; }
