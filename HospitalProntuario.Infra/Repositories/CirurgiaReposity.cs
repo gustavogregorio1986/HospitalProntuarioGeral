@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace HospitalProntuario.Infra.Repositories
 {
-    public class CirurgiaReposity : ICirurgiaReposity
+    public class CirurgiaReposity : ICirurgiaReposity       
     {
         private readonly AppDbContext _context;
 

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace HospitalProntuario.Infra.Repositories
 {
-    public class AgendamentoRepository : IAgendamentoRepository
+    public class AgendamentoRepository : IAgendamentoRepository          
     {
         private readonly AppDbContext _context;
 
