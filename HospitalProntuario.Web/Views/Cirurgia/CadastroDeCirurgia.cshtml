@@ -1,25 +1,39 @@
 ﻿<div class="container mt-3">
-    <p class="h1">Cadastro da Cirurgia</p>
+    <p class="h1 mb-4">Cadastro de Cirurgia</p>
+
+    <form action="/Cirurgia/Create" method="post">
+        <div class="row g-3">
+            <!-- Data da Entrada -->
+            <div class="col-md-6">
+                <label for="DataEntrada" class="form-label">Data da Entrada</label>
+                <input type="date" id="DataEntrada" name="DataEntrada" class="form-control" required />
+            </div>
+
+            <!-- Data da Saída -->
+            <div class="col-md-6">
+                <label for="DataSaida" class="form-label">Data da Saída</label>
+                <input type="date" id="DataSaida" name="DataSaida" class="form-control" />
+            </div>
+
+            <!-- Quarto -->
+            <div class="col-md-6">
+                <label for="Quarto" class="form-label">Quarto</label>
+                <input type="text" id="Quarto" name="Quarto" class="form-control" placeholder="Ex: 104 - Bloco A" required />
+            </div>
+
+            <!-- Paciente -->
+            <div class="col-md-6">
+                <label for="PacienteId" class="form-label">Paciente</label>
+                <select id="PacienteId" name="PacienteId" class="form-select" required>
+                    <option value="" selected disabled>Selecione o paciente...</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Salvar Cirurgia</button>
+            </div>
+        </div>
+    </form>
 </div>
-
-
-<form>
-    <div class="row">
-        <div class="col">
-            <input type="date" class="form-control" placeholder="Data da Entrada" />
-        </div>
-        <div class="col">
-            <input type="date" class="form-control" placeholder="Data da Saída" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <input type="text" class="form-control" placeholder="Quarto" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <input type="text"  class="form-control" placeholder="Nome do Paciente" />
-        </div>
-    </div>
-</form>

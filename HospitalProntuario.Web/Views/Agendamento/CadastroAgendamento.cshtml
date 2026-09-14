@@ -1,0 +1,42 @@
+﻿<div class="container mt-3">
+    <p class="h1 mb-4">Cadastro de Agendamento</p>
+
+    <form action="/Agendamento/Create" method="post">
+        <div class="row g-3">
+            <!-- Data e Hora -->
+            <div class="col-md-6">
+                <label for="Data" class="form-label">Data e Hora</label>
+                <input type="datetime-local" id="Data" name="Data" class="form-control" required />
+            </div>
+
+            <!-- Tipo de Agendamento -->
+            <div class="col-md-6">
+                <label for="Tipo" class="form-label">Tipo</label>
+                <input type="text" id="Tipo" name="Tipo" class="form-control" placeholder="Ex: Consulta, Exame, Retorno" required />
+            </div>
+
+            <!-- ID do Paciente -->
+            <<!-- Seleção do Paciente -->
+                <div class="col-md-6">
+                    <label for="PacienteId" class="form-label">Paciente</label>
+                    <select id="PacienteId" name="PacienteId" class="form-select" required>
+                        <option value="" selected disabled>Selecione o paciente...</option>
+                    </select>
+                </div>
+
+                <!-- Seleção do Médico -->
+                <div class="col-md-6">
+                    <label for="MedicoId" class="form-label">Médico</label>
+                    <select id="MedicoId" name="MedicoId" class="form-select" required>
+                        <option value="" selected disabled>Selecione o médico...</option>
+                    </select>
+                </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Salvar Agendamento</button>
+            </div>
+        </div>
+    </form>
+</div>

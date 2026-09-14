@@ -1,22 +1,48 @@
 ﻿<div class="container mt-3">
-    <p class="h1">Cadastro de Paciente</p>
-</div>
+    <p class="h1 mb-4">Cadastro de Paciente</p>
 
-<form>
-    <div class="row">
-        <div class="col">
-            <input type="text" class="form-control" placeholder="Nome">
+    <form action="/Paciente/Create" method="post">
+        <div class="row g-3">
+            <!-- Nome -->
+            <div class="col-md-6">
+                <label for="Nome" class="form-label">Nome Completo</label>
+                <input type="text" id="Nome" name="Nome" class="form-control" placeholder="Ex: Maria Silva" required />
+            </div>
+
+            <!-- CPF -->
+            <div class="col-md-6">
+                <label for="CPF" class="form-label">CPF</label>
+                <input type="text" id="CPF" name="CPF" class="form-control" placeholder="000.000.000-00" required />
+            </div>
+
+            <!-- Data de Nascimento -->
+            <div class="col-md-4">
+                <label for="DataNascimento" class="form-label">Data de Nascimento</label>
+                <input type="date" id="DataNascimento" name="DataNascimento" class="form-control" required />
+            </div>
+
+            <!-- Plano de Saúde -->
+            <div class="col-md-4">
+                <label for="PlanoSaudeId" class="form-label">Plano de Saúde</label>
+                <select id="PlanoSaudeId" name="PlanoSaudeId" class="form-select">
+                    <option value="" selected>Selecione o plano</option>
+                </select>
+            </div>
+
+            <!-- Cirurgia -->
+            <div class="col-md-4">
+                <label for="CirurgiaId" class="form-label">Cirurgia relacionada</label>
+                <select id="CirurgiaId" name="CirurgiaId" class="form-select">
+                    <option value="" selected>Selecione cirurgia</option>
+                    <!-- Opções carregadas do banco -->
+                </select>
+            </div>
         </div>
-        <div class="col">
-            <input type="date" class="form-control" placeholder="Data de Nascimento">
+
+        <div class="row mt-4">
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Salvar Paciente</button>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <input type="text" class="form-control" placeholder="CPF">
-        </div>
-    </div>
-    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-        <option selected>Seleciona o Plano de Saude</option>
-    </select>
-</form>
+    </form>
+</div>

@@ -2,6 +2,7 @@ using HospitalProntuario.Application.Services;
 using HospitalProntuario.Domain.Domain;
 using HospitalProntuario.Domain.Repositories.Interface;
 using HospitalProntuario.Domain.Services;
+using HospitalProntuario.Domain.Services.Interface;
 using HospitalProntuario.Infra.Context;
 using HospitalProntuario.Infra.Repositories;
 using HospitalProntuario.Infra.Service;
@@ -21,6 +22,8 @@ builder.Services.AddScoped<IMedicoRepository, MedicoRepository>();
 builder.Services.AddScoped<IPacienteRepository, PacienteRepository>();
 builder.Services.AddScoped<IPagamentoRepository, PagamentoRepository>();
 builder.Services.AddScoped<IPlanoSaudeRepository, PlanoSaudeRepository>();
+builder.Services.AddScoped<IRecepcionistaRepository, RecepcionistaRepository>();
+
 
 builder.Services.AddScoped<IPlanoSaudeService, PlanoSaudeService>();
 builder.Services.AddScoped<ICirurgiaService, CirurgiaService>();
@@ -29,6 +32,7 @@ builder.Services.AddScoped<IInternacaoService, InternacaoService>();
 builder.Services.AddScoped<IMedicoService, MedicoService>();
 builder.Services.AddScoped<IPagamentoService, PagamentoService>();
 builder.Services.AddScoped<IPacienteService, PacienteService>();
+builder.Services.AddScoped<IRecepcionistaService, RecepcionistaService>();
 
 var app = builder.Build();
 

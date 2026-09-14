@@ -1,24 +1,53 @@
 ﻿<div class="container mt-3">
-    <p class="h1">Nova Internação</p>
-</div>
+    <p class="h1 mb-4">Cadastro de Internação</p>
 
-<form>
-    <div class="row">
-        <div class="col">
-            <input type="date" class="form-control" placeholder="Data da Entrada">
+    <form action="/Internacao/Create" method="post">
+        <div class="row g-3">
+            <!-- Data de Entrada -->
+            <div class="col-md-6">
+                <label for="DataEntrada" class="form-label">Data de Entrada</label>
+                <input type="datetime-local" id="DataEntrada" name="DataEntrada" class="form-control" required />
+            </div>
+
+            <!-- Previsão de Alta / Data de Saída -->
+            <div class="col-md-6">
+                <label for="DataSaida" class="form-label">Data de Saída / Previsão de Alta</label>
+                <input type="datetime-local" id="DataSaida" name="DataSaida" class="form-control" />
+            </div>
+
+            <!-- Leito / Quarto -->
+            <div class="col-md-6">
+                <label for="Leito" class="form-label">Leito / Quarto</label>
+                <input type="text" id="Leito" name="Leito" class="form-control" placeholder="Ex: Leito 202 - Bloco B" required />
+            </div>
+
+            <!-- Paciente -->
+            <div class="col-md-6">
+                <label for="PacienteId" class="form-label">Paciente</label>
+                <select id="PacienteId" name="PacienteId" class="form-select" required>
+                    <option value="" selected disabled>Selecione o paciente...</option>
+                </select>
+            </div>
+
+            <!-- Médico Responsável -->
+            <div class="col-md-6">
+                <label for="MedicoId" class="form-label">Médico Responsável</label>
+                <select id="MedicoId" name="MedicoId" class="form-select" required>
+                    <option value="" selected disabled>Selecione o médico...</option>
+                </select>
+            </div>
+
+            <!-- Observações / Diagnóstico Inicial -->
+            <div class="col-md-6">
+                <label for="Observacoes" class="form-label">Observações</label>
+                <input type="text" id="Observacoes" name="Observacoes" class="form-control" placeholder="Motivo ou observações da internação" />
+            </div>
         </div>
-        <div class="col">
-            <input type="date" class="form-control" placeholder="Data da Saída">
+
+        <div class="row mt-4">
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Salvar Internação</button>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <input type="text" class="form-control" placeholder="Quarto">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <input type="text" class="form-control" placeholder="Nome do Paciente">
-        </div>
-    </div>
-</form>
+    </form>
+</div>

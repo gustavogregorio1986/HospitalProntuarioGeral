@@ -1,14 +1,25 @@
 ﻿<div class="container mt-3">
-    <p class="h1">Cadastro de Plano de Saúde</p>
-</div>
+    <p class="h1 mb-4">Cadastro de Plano de Saúde</p>
 
-<form>
-    <div class="row">
-        <div class="col">
-            <input type="text" class="form-control" placeholder="Nome">
+    <form action="/PlanoSaude/CadastroDePlanoSaude" method="post">
+        <div class="row g-3">
+            <!-- Nome -->
+            <div class="col-md-6">
+                <label for="Nome" class="form-label">Nome do Plano</label>
+                <input type="text" id="Nome" name="Nome" class="form-control" placeholder="Ex: Unimed, Amil" required />
+            </div>
+
+            <!-- Registro ANS -->
+            <div class="col-md-6">
+                <label for="RegistroANS" class="form-label">Registro ANS</label>
+                <input type="text" id="RegistroANS" name="RegistroANS" class="form-control" placeholder="Ex: 123456" required />
+            </div>
         </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="Registro ANS">
+
+        <div class="row mt-4">
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Salvar Plano</button>
+            </div>
         </div>
-    </div>
-</form>
+    </form>
+</div>

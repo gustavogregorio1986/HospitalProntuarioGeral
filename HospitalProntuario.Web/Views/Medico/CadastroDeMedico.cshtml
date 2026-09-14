@@ -1,19 +1,31 @@
 ﻿<div class="container mt-3">
-    <p class="h1">Cadastro de Médico</p>
-</div>
+    <p class="h1 mb-4">Cadastro de Médico</p>
 
-<form>
-    <div class="row">
-        <div class="col">
-            <input type="text" class="form-control" placeholder="Nome">
+    <form action="/Medico/Create" method="post">
+        <div class="row g-3">
+            <!-- Nome Completo -->
+            <div class="col-md-4">
+                <label for="Nome" class="form-label">Nome Completo</label>
+                <input type="text" id="Nome" name="Nome" class="form-control" placeholder="Ex: Dr. Roberto Alves" required />
+            </div>
+
+            <!-- CRM -->
+            <div class="col-md-4">
+                <label for="CRM" class="form-label">CRM</label>
+                <input type="text" id="CRM" name="CRM" class="form-control" placeholder="Ex: 123456/SP" required />
+            </div>
+
+            <!-- Especialidade -->
+            <div class="col-md-4">
+                <label for="Especialidade" class="form-label">Especialidade</label>
+                <input type="text" id="Especialidade" name="Especialidade" class="form-control" placeholder="Ex: Cardiologia" required />
+            </div>
         </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="CRM">
+
+        <div class="row mt-4">
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Salvar Médico</button>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <input type="text" class="form-control" placeholder="Especialidade">
-        </div>
-    </div>
-</form>
+    </form>
+</div>

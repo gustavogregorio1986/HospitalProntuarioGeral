@@ -17,5 +17,8 @@ namespace HospitalProntuario.Domain.Domain
 
         public int MedicoId { get; set; }
         public Medico Medico { get; set; }
+
+        public int RecepcionistaId { get; set; }
+        public Recepcionista Recepcionista { get; set; }
     }
 }

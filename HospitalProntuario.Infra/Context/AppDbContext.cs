@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,6 +32,8 @@ namespace HospitalProntuario.Infra.Context
 
         public DbSet<PlanoSaude> PlanosSaude { get; set; }
 
+        public DbSet<Recepcionista> Recepcionistas { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new PacienteMapping());
@@ -40,6 +43,10 @@ namespace HospitalProntuario.Infra.Context
             modelBuilder.ApplyConfiguration(new InternacaoMapping());
             modelBuilder.ApplyConfiguration(new PagamentoMapping());
             modelBuilder.ApplyConfiguration(new PlanoSaudeMapping());
+            modelBuilder.ApplyConfiguration(new RecepcionistaMapping());
+
+            // Registra automaticamente todas as classes que implementam IEntityTypeConfiguration neste assembly
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
     }

@@ -1,21 +1,49 @@
 ﻿<div class="container mt-3">
-    <p class="h1">Cadastro de Pagamento</p>
+    <p class="h1 mb-4">Cadastro de Pagamento</p>
+
+    <form action="/Pagamento/CadastroDePagamento" method="post">
+        <div class="row g-3">
+            <!-- Valor -->
+            <div class="col-md-6">
+                <label for="Valor" class="form-label">Valor</label>
+                <input type="number" step="0.01" id="Valor" name="Valor" class="form-control" placeholder="0,00" required />
+            </div>
+
+            <!-- Data do Pagamento -->
+            <div class="col-md-6">
+                <label for="DataPagamento" class="form-label">Data do Pagamento</label>
+                <input type="date" id="DataPagamento" name="DataPagamento" class="form-control" required />
+            </div>
+
+            <!-- Forma de Pagamento -->
+            <div class="col-md-6">
+                <label for="FormaPagamento" class="form-label">Forma de Pagamento</label>
+                <select id="FormaPagamento" name="FormaPagamento" class="form-select" required>
+                    <option value="" selected disabled>Selecione a forma de pagamento...</option>
+                    <option value="Dinheiro">Dinheiro</option>
+                    <option value="Cartão de Crédito">Cartão de Crédito</option>
+                    <option value="Cartão de Débito">Cartão de Débito</option>
+                    <option value="Pix">Pix</option>
+                    <option value="Boleto">Boleto</option>
+                </select>
+            </div>
+
+            <!-- Status do Pagamento -->
+            <div class="col-md-6">
+                <label for="Status" class="form-label">Status</label>
+                <select id="Status" name="Status" class="form-select" required>
+                    <option value="" selected disabled>Selecione o status...</option>
+                    <option value="Pendente">Pendente</option>
+                    <option value="Pago">Pago</option>
+                    <option value="Cancelado">Cancelado</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Salvar Pagamento</button>
+            </div>
+        </div>
+    </form>
 </div>
-
-<<form>
-    <div class="row">
-        <div class="col">
-            <input type="text" class="form-control" placeholder="Valor">
-        </div>
-        <div class="col">
-            <input type="date" class="form-control" placeholder="Data do Pagamento">
-        </div>
-    </div>
-    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-        <option selected>Seleciona a forma de pagamento</option>
-    </select>
-
-    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-        <option selected>Seleciona o status</option>
-    </select>
-</form>

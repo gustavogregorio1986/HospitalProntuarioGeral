@@ -1,3 +1,43 @@
 ﻿<div class="container mt-3">
-    <p class="h1">Cadastro de Recepcionista</p>
+    <p class="h1 mb-4">Cadastro de Recepcionista</p>
+
+    <form action="/Recepcionista/CadastroDeRecepcionista" method="post">
+        <div class="row g-3">
+            <!-- Nome -->
+            <div class="col-md-6">
+                <label for="Nome" class="form-label">Nome Completo</label>
+                <input type="text" id="Nome" name="Nome" class="form-control" placeholder="Digite o nome completo" required />
+            </div>
+
+            <!-- CPF -->
+            <div class="col-md-6">
+                <label for="CPF" class="form-label">CPF</label>
+                <input type="text" id="CPF" name="CPF" class="form-control" placeholder="000.000.000-00" required />
+            </div>
+
+            <!-- Email -->
+            <div class="col-md-6">
+                <label for="Email" class="form-label">E-mail</label>
+                <input type="email" id="Email" name="Email" class="form-control" placeholder="nome@exemplo.com" required />
+            </div>
+
+            <!-- Turno -->
+            <div class="col-md-6">
+                <label for="Turno" class="form-label">Turno</label>
+                <select id="Turno" name="Turno" class="form-select" required>
+                    <option value="" selected disabled>Selecione o turno...</option>
+                    <option value="Manhã">Manhã</option>
+                    <option value="Tarde">Tarde</option>
+                    <option value="Noite">Noite</option>
+                    <option value="Integral">Integral</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Salvar Recepcionista</button>
+            </div>
+        </div>
+    </form>
 </div>
