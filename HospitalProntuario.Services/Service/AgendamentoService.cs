@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HospitalProntuario.Infra.Service
 {
-    public class AgendamentoService : IAgendamentoService
+    public class AgendamentoService : IAgendamentoService            
     {
         private readonly IAgendamentoRepository _agendamentoRepository;
 
