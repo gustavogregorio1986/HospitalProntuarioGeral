@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HospitalProntuario.Domain.Domain
 {
-    public class Cirurgia
+    public class Cirurgia        
     {
         public int Id { get; set; }
         public DateTime Data { get; set; }
