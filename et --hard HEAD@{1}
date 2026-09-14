@@ -1,0 +1,45 @@
+[33m9d41de1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{0}: reset: moving to 9d41de1
+[33m9d41de1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{1}: checkout: moving from master to master
+[33m9d41de1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{2}: checkout: moving from master to master
+[33m9d41de1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{3}: checkout: moving from master to master
+[33m9d41de1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{4}: rebase (finish): returning to refs/heads/master
+[33m9d41de1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{5}: rebase (start): checkout HEAD~5
+[33m9d41de1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{6}: rebase (abort): returning to refs/heads/master
+[33m9d41de1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{7}: rebase (abort): returning to refs/heads/master
+[33m5a611d8[m HEAD@{8}: reset: moving to HEAD@{1}
+[33m9d41de1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{9}: checkout: moving from 5a611d829c4feddf2b1d57965da6ce1edcfbd687 to master
+[33m5a611d8[m HEAD@{10}: rebase: fast-forward
+[33mb6c76cc[m HEAD@{11}: rebase (start): checkout HEAD~5
+[33m9d41de1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{12}: rebase (abort): returning to refs/heads/master
+[33m9d41de1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{13}: rebase (abort): returning to refs/heads/master
+[33m9d41de1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{14}: commit (amend): Desenvolvendo a interface e servico completo
+[33m73d3e69[m HEAD@{15}: commit (amend): Desenvolvendo a interface e service completo
+[33m6b340d9[m HEAD@{16}: commit: Melhorando no desenvolvimento o HTML do razor no projeto HospitalProntuario
+[33mfa3c1aa[m HEAD@{17}: commit: Desnevolvndo a interface completa no projeto HospitalProntuario
+[33m4ecb4aa[m HEAD@{18}: commit: Desenvolvendo as melhorias no projeto HospitalProntuario
+[33m10c2240[m HEAD@{19}: commit: Acrescentando mais campos que falta no projeto Hospital Prontuario
+[33m5a611d8[m HEAD@{20}: commit: Desenvolvendo s telas completas no projeto HospitalProntuario
+[33mb6c76cc[m HEAD@{21}: commit: Desnevolvendo o formulario de alugns cadastros no projeto HospitalProntuario
+[33md26f784[m HEAD@{22}: commit: Desenvolver o titulo das paginas do razro no projeto HospitalProntuario
+[33m916582d[m HEAD@{23}: commit: Desenvolvendo os formularios, nessr commit desenvolvi o formulario de cores para funcionar no sistema interio
+[33mcd7718d[m HEAD@{24}: commit: Desenvolvendo os links paar as respecitivas paginas no projeto Hospital Prontuario
+[33m46649b9[m HEAD@{25}: commit: Desenvolvendo os links e sublinkis no projeto do HospitalProntuario
+[33me911fd0[m HEAD@{26}: commit: Desenvolver o link par as telas no razro no C# no projeto Hospital Prontuario
+[33mce65617[m HEAD@{27}: commit: Desenvolver o menu de adminsitrador eusuario e recepcionista no projeto HospitalProntuario
+[33mdd93f08[m HEAD@{28}: commit: Melhorrando a pagfina inicial do home e enxugando com a padronização do sistema no projeto HospitalProntuario
+[33mdcd7197[m HEAD@{29}: commit: Melhroanbdo aidna mais o desenvolvimento do menu no projeto HospitalProntuario
+[33meb9e14a[m HEAD@{30}: commit: Desenvolver o o campo StatusPagamento no projeto Hospital Prontuario
+[33m25e993d[m HEAD@{31}: commit: Desnevolvo o home com os menus e a tela inicial no projeto Hospital Protuario
+[33m88f5bf2[m HEAD@{32}: commit: Ajustei os usings na atualização do projeto hospitalProtuario
+[33m70d1088[m HEAD@{33}: commit: Atualizei o desenvolvimento do service no projeto HospitalProtuario
+[33m54efa70[m HEAD@{34}: commit: Desenvolvendo o DTO no projeto HospitalProntuario
+[33m9f3c5b0[m HEAD@{35}: commit: Classes e interfaces do service no HospitalProntuario
+[33m9ce8e4e[m HEAD@{36}: commit: Desenvolvimento da criação da interface e serviço e com a injeção de dependencia no HospitalProntuario
+[33maf29e85[m HEAD@{37}: commit: Desnevolver as classes de repositorio no projeto HospitalProntuario
+[33m8cb35df[m HEAD@{38}: commit: Desenvolver o metodo da interface e repositries no projeto HospitalProntuario
+[33m1beabb6[m HEAD@{39}: commit: Desenvolver a interface e os repositorios no projeto HospitalProntuario
+[33m39bdf20[m HEAD@{40}: commit: Verificando o desenvolvimento certo
+[33m463c8be[m HEAD@{41}: commit: Tive que recriar
+[33m87f1f63[m HEAD@{42}: commit: Desenvolver a classe generica com interface e repository com sua injeção de dependencias
+[33m22b9a90[m HEAD@{43}: commit: Add project files.
+[33m0569355[m HEAD@{44}: commit (initial): Add .gitattributes and .gitignore.
