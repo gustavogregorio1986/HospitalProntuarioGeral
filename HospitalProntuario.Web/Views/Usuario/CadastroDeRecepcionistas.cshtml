@@ -1,30 +1,42 @@
-﻿<div class="container mt-3">
+﻿@model HospitalProntuario.Services.DTOs.RecepcionistaRequestDto
+
+<div class="container mt-3">
     <p class="h1 mb-4">Cadastro de Recepcionista</p>
 
-    <form asp-controller="Recepcionista" asp-action="CadastrarRecepcionista" method="post">
+    <!-- Exibe o alerta de sucesso se houver mensagem no TempData -->
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["MensagemSucesso"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <!-- CORRIGIDO: aponta para a action CadastroRecepcionista -->
+    <form asp-controller="Usuario" asp-action="CadastroRecepcionista" method="post">
         <div class="row g-3">
             <!-- Nome -->
             <div class="col-md-6">
                 <label for="Nome" class="form-label">Nome Completo</label>
-                <input type="text" id="Nome" name="Nome" class="form-control" placeholder="Digite o nome completo" required />
+                <input type="text" id="Nome" asp-for="Nome" name="Nome" class="form-control" placeholder="Digite o nome completo" required />
             </div>
 
             <!-- CPF -->
             <div class="col-md-6">
                 <label for="CPF" class="form-label">CPF</label>
-                <input type="text" id="CPF" name="CPF" class="form-control" placeholder="000.000.000-00" required />
+                <input type="text" id="CPF" asp-for="Cpf" name="CPF" class="form-control" placeholder="000.000.000-00" required />
             </div>
 
             <!-- Email -->
             <div class="col-md-6">
                 <label for="Email" class="form-label">E-mail</label>
-                <input type="email" id="Email" name="Email" class="form-control" placeholder="nome@exemplo.com" required />
+                <input type="email" id="Email" asp-for="Email" class="form-control" placeholder="nome@exemplo.com" required />
             </div>
 
             <!-- Turno -->
             <div class="col-md-6">
                 <label for="Turno" class="form-label">Turno</label>
-                <select id="Turno" name="Turno" class="form-select" required>
+                <select id="Turno" asp-for="Turno" name="Turno" class="form-select" required>
                     <option value="" selected disabled>Selecione o turno...</option>
                     <option value="Manhã">Manhã</option>
                     <option value="Tarde">Tarde</option>
