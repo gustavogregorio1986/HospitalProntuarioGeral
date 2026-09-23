@@ -8,6 +8,7 @@ namespace HospitalProntuario.Domain.Services.Interface
     {
         Task<Recepcionista?> GetByIdAsync(int id);
         Task<IEnumerable<Recepcionista>> GetAllAsync();
+        Task<(IEnumerable<Recepcionista> Recepcionistas, int TotalPages)> GetPagedAsync(int pageNumber, int pageSize);
         Task<Recepcionista> AddAsync(Recepcionista recepcionista);
         Task UpdateAsync(Recepcionista recepcionista);
         Task DeleteAsync(int id);

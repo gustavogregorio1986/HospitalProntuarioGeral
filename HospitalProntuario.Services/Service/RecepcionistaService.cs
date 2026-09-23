@@ -21,9 +21,22 @@ namespace HospitalProntuario.Domain.Services
             return await _recepcionistaRepository.GetByIdAsync(id);
         }
 
+        // Método original (mantém-se igual)
         public async Task<IEnumerable<Recepcionista>> GetAllAsync()
         {
             return await _recepcionistaRepository.GetAllAsync();
+        }
+
+        // Novo método exclusivo para paginação
+        public async Task<(IEnumerable<Recepcionista> Recepcionistas, int TotalPages)> GetPagedAsync(int pageNumber, int pageSize)
+        {
+            var todas = await _recepcionistaRepository.GetAllAsync();
+            var lista = todas.ToList();
+
+            int totalPages = (int)Math.Ceiling(lista.Count / (double)pageSize);
+            var paged = lista.Skip((pageNumber - 1) * pageSize).Take(pageSize);
+
+            return (paged, totalPages);
         }
 
         public async Task<Recepcionista> AddAsync(Recepcionista recepcionista)

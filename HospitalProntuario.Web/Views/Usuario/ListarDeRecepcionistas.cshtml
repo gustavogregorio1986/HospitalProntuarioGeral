@@ -1,3 +1,77 @@
-﻿<div class="container mt-3">
-    <p class="h1">Lista de Recepcionistas</p>
+﻿@model IEnumerable<HospitalProntuario.Domain.Domain.Recepcionista>
+
+<div class="container mt-4">
+    <h2>Lista de Recepcionistas</h2>
+
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["MensagemSucesso"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <table class="table table-striped table-bordered align-middle">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>E-mail</th>
+                <th>Turno</th>
+                <th class="text-center" style="width: 150px;">Ações</th> <!-- Coluna de Ações -->
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Nome</td>
+                        <td>@item.CPF</td>
+                        <td>@item.Email</td>
+                        <td>@item.Turno</td>
+                        <td class="text-center">
+                            <!-- Botão Editar -->
+                            <a asp-action="Editar" asp-route-id="@item.CPF" class="btn btn-sm btn-warning me-1">Editar</a>
+
+                            <!-- Botão Excluir -->
+                            <form asp-action="Excluir" asp-route-id="@item.CPF" method="post" class="d-inline" onsubmit="return confirm('Tens a certeza que pretendes excluir esta recepcionista?');">
+                                <button type="submit" class="btn btn-sm btn-danger">Excluir</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5" class="text-center">Nenhuma recepcionista cadastrada.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- BARRA DE PAGINAÇÃO -->
+    @if (ViewBag.TotalPages > 1)
+    {
+        <nav aria-label="Navegação de páginas" class="mt-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
+                    <a class="page-link" asp-action="ListarDeRecepcionistas" asp-route-pagina="@(ViewBag.CurrentPage - 1)">Anterior</a>
+                </li>
+
+                @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                {
+                    <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
+                        <a class="page-link" asp-action="ListarDeRecepcionistas" asp-route-pagina="@i">@i</a>
+                    </li>
+                }
+
+                <li class="page-item @(ViewBag.CurrentPage >= ViewBag.TotalPages ? "disabled" : "")">
+                    <a class="page-link" asp-action="ListarDeRecepcionistas" asp-route-pagina="@(ViewBag.CurrentPage + 1)">Seguinte</a>
+                </li>
+            </ul>
+        </nav>
+    }
 </div>

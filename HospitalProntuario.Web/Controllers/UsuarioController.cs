@@ -14,12 +14,28 @@ namespace HospitalProntuario.Web.Controllers
             _recepcionistaService = recepcionistaService;
         }
 
-        public IActionResult ListarDeRecepcionistas()
+        [HttpGet]
+        public async Task<IActionResult> ListarDeRecepcionistas(int pagina = 1)
+        {
+            int pageSize = 10; // Quantidade de registos por página
+
+            // Chama o método paginado do serviço que criámos (desestrutura a tupla)
+            var (recepcionistas, totalPages) = await _recepcionistaService.GetPagedAsync(pagina, pageSize);
+
+            // Passa os dados de controlo para a View através do ViewBag
+            ViewBag.CurrentPage = pagina;
+            ViewBag.TotalPages = totalPages;
+
+            // Retorna a lista paginada para a View
+            return View(recepcionistas);
+        }
+
+        public IActionResult CadastroDeUsuario()
         {
             return View();
         }
 
-        public IActionResult CadastroDeUsuario()
+        public IActionResult ListarUsuarios()
         {
             return View();
         }
@@ -53,5 +69,8 @@ namespace HospitalProntuario.Web.Controllers
             // Redireciona para a listagem após salvar com sucesso
             return RedirectToAction("CadastroDeRecepcionistas", "Usuario");
         }
+
+        
+
     }
 }
