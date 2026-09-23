@@ -70,7 +70,28 @@ namespace HospitalProntuario.Web.Controllers
             return RedirectToAction("CadastroDeRecepcionistas", "Usuario");
         }
 
-        
+        [HttpGet("buscar")]
+        public async Task<IActionResult> BuscarPorCpf(string cpf)
+        {
+            if (string.IsNullOrWhiteSpace(cpf))
+            {
+                ModelState.AddModelError(string.Empty, "O CPF deve ser informado.");
+                return View("Index"); // Ou a view correspondente
+            }
+
+            // Chama o método assíncrono que você criou
+            var recepcionista = await _recepcionistaService.GetByCpfAsync(cpf);
+
+            if (recepcionista == null)
+            {
+                TempData["MensagemErro"] = "Recepcionista não encontrado.";
+                return View("Index");
+            }
+
+            // Retorna a View passando o objeto encontrado
+            return View("Detalhes", recepcionista);
+        }
+
 
     }
 }

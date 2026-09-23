@@ -21,10 +21,10 @@
                 <input type="text" id="Nome" asp-for="Nome" name="Nome" class="form-control" placeholder="Digite o nome completo" required />
             </div>
 
-            <!-- CPF -->
+            <!-- Input do CPF -->
             <div class="col-md-6">
                 <label for="CPF" class="form-label">CPF</label>
-                <input type="text" id="CPF" asp-for="Cpf" name="CPF" class="form-control" placeholder="000.000.000-00" required />
+                <input type="text" id="CPF" asp-for="Cpf" name="CPF" class="form-control" placeholder="000.000.000-00" required maxlength="14" />
             </div>
 
             <!-- Email -->
@@ -53,3 +53,31 @@
         </div>
     </form>
 </div>
+
+<!-- Script nativo em JavaScript Puro (sem erros de plugin) -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const cpfInput = document.getElementById('CPF');
+
+        if (cpfInput) {
+            cpfInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, ""); // Remove tudo que não for número
+
+                if (value.length > 11) {
+                    value = value.slice(0, 11); // Limita a 11 dígitos
+                }
+
+                // Aplica a formatação do CPF (000.000.000-00) dinamicamente
+                if (value.length > 9) {
+                    value = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2}).*/, "$1.$2.$3-$4");
+                } else if (value.length > 6) {
+                    value = value.replace(/^(\d{3})(\d{3})(\d{3}).*/, "$1.$2.$3");
+                } else if (value.length > 3) {
+                    value = value.replace(/^(\d{3})(\d{3}).*/, "$1.$2");
+                }
+
+                e.target.value = value;
+            });
+        }
+    });
+</script>
