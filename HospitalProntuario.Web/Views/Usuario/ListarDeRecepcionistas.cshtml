@@ -28,7 +28,7 @@
                 {
                     <tr>
                         <td>@item.Nome</td>
-                        <td>@item.CPF</td>
+                        <td>@(Convert.ToUInt64(item.CPF).ToString(@"000\.000\.000\-00"))</td>
                         <td>@item.Email</td>
                         <td>@item.Turno</td>
                         <td class="text-center">
