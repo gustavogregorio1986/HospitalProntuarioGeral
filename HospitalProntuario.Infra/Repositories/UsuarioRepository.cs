@@ -1,5 +1,7 @@
 ﻿using HospitalProntuario.Domain.Domain.Usuario;
 using HospitalProntuario.Domain.Repositories.Interface;
+using HospitalProntuario.Infra.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,29 +12,44 @@ namespace HospitalProntuario.Infra.Repositories
 {
     public class UsuarioRepository : IUsuarioInterface
     {
-        public Task AdicionarAsync(Usuario usuario, string senhaPura)
+        private readonly AppDbContext _context;
+
+        public UsuarioRepository(AppDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task AtualizarAsync(Usuario usuario)
+
+        public async Task AdicionarAsync(Usuario usuario, string senhaPura)
         {
-            throw new NotImplementedException();
+            await _context.Usuarios.AddAsync(usuario);
+            await _context.SaveChangesAsync();
         }
 
-        public Task DesativarAsync(int id)
+        public async Task AtualizarAsync(Usuario usuario)
         {
-            throw new NotImplementedException();
+            _context.Usuarios.Update(usuario);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<Usuario> ObterPorIdAsync(int id)
+        public async Task DesativarAsync(int id)
         {
-            throw new NotImplementedException();
+            var usuario = await _context.Usuarios.FindAsync(id);
+            if (usuario != null)
+            {
+                _context.Usuarios.Remove(usuario);
+                await _context.SaveChangesAsync();
+            }
         }
 
-        public Task<IEnumerable<Usuario>> ObterTodosAsync()
+        public async Task<Usuario> ObterPorIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Usuarios.FindAsync(id);
+        }
+
+        public async Task<IEnumerable<Usuario>> ObterTodosAsync()
+        {
+            return await _context.Usuarios.ToListAsync();
         }
     }
 }

@@ -1,5 +1,9 @@
 ﻿using HospitalProntuario.Domain.Domain.Usuario;
+using HospitalProntuario.Domain.Repositories.Interface;
 using HospitalProntuario.Domain.Services;
+using HospitalProntuario.Infra.Context;
+using HospitalProntuario.Infra.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,29 +14,58 @@ namespace HospitalProntuario.Services.Service
 {
     public class UsuarioService : IUsuarioService
     {
-        public Task AdicionarAsync(Usuario usuario, string senhaPura)
+        private readonly IUsuarioInterface _usuarioInterface;
+
+        public UsuarioService(IUsuarioInterface usuarioInterface)
         {
-            throw new NotImplementedException();
+            _usuarioInterface = usuarioInterface;
         }
 
-        public Task AtualizarAsync(Usuario usuario)
+
+        public async Task AdicionarAsync(Usuario usuario, string senhaPura)
         {
-            throw new NotImplementedException();
+            // Valida se o e-mail já existe
+            var existe = await _usuarioInterface.ObterPorEmailAsync(usuario.Email);
+            if (existe != null)
+            {
+                throw new System.Exception("Já existe um utilizador registado com este e-mail.");
+            }
+
+            // Faz o hash seguro da senha
+            usuario.PasswordHash = BCrypt.Net.BCrypt.HashPassword(senhaPura);
+
+            await _usuarioInterface.AdicionarAsync(usuario, senhaPura);
         }
 
-        public Task DesativarAsync(int id)
+
+
+        public async Task AtualizarAsync(Usuario usuario)
         {
-            throw new NotImplementedException();
+            // Delega a atualização para a interface do repositório
+            await _usuarioInterface.AtualizarAsync(usuario);
         }
 
-        public Task<Usuario> ObterPorIdAsync(int id)
+        public async Task DesativarAsync(int id)
         {
-            throw new NotImplementedException();
+            // Primeiro busca o utilizador usando o método da interface
+            var usuario = await _usuarioInterface.ObterPorIdAsync(id);
+            if (usuario != null)
+            {
+                // Se encontrar, remove através da interface
+                await _usuarioInterface.RemoverAsync(usuario);
+            }
         }
 
-        public Task<IEnumerable<Usuario>> ObterTodosAsync()
+        public async Task<Usuario> ObterPorIdAsync(int id)
         {
-            throw new NotImplementedException();
+            // Busca o utilizador por ID via interface
+            return await _usuarioInterface.ObterPorIdAsync(id);
+        }
+
+        public async Task<IEnumerable<Usuario>> ObterTodosAsync()
+        {
+            // Retorna todos os utilizadores via interface
+            return await _usuarioInterface.ObterTodosAsync();
         }
     }
 }

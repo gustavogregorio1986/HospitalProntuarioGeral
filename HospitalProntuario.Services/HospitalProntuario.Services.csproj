@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\HospitalProntuario.Domain\HospitalProntuario.Domain.csproj" />
     <ProjectReference Include="..\HospitalProntuario.Infra\HospitalProntuario.Infra.csproj" />
   </ItemGroup>
