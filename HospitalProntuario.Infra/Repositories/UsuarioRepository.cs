@@ -2,11 +2,6 @@
 using HospitalProntuario.Domain.Repositories.Interface;
 using HospitalProntuario.Infra.Context;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HospitalProntuario.Infra.Repositories
 {
