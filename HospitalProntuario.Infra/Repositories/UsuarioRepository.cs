@@ -47,6 +47,13 @@ namespace HospitalProntuario.Infra.Repositories
             return await _context.Usuarios.FindAsync(id);
         }
 
+        public async Task<Usuario> ObterPorEmailAsync(string email)
+        {
+            return await _context.Usuarios
+                .FirstOrDefaultAsync(u => u.Email == email);
+        }
+
+
         public async Task<IEnumerable<Usuario>> ObterTodosAsync()
         {
             return await _context.Usuarios.ToListAsync();

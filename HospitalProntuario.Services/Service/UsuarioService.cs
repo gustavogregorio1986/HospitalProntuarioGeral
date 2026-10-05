@@ -24,7 +24,7 @@ namespace HospitalProntuario.Services.Service
 
         public async Task AdicionarAsync(Usuario usuario, string senhaPura)
         {
-            // Valida se o e-mail já existe
+            // Valida se o e-mail já existe usando o repositório atualizado
             var existe = await _usuarioInterface.ObterPorEmailAsync(usuario.Email);
             if (existe != null)
             {
@@ -34,6 +34,7 @@ namespace HospitalProntuario.Services.Service
             // Faz o hash seguro da senha
             usuario.PasswordHash = BCrypt.Net.BCrypt.HashPassword(senhaPura);
 
+            // Salva na base de dados
             await _usuarioInterface.AdicionarAsync(usuario, senhaPura);
         }
 
@@ -51,8 +52,8 @@ namespace HospitalProntuario.Services.Service
             var usuario = await _usuarioInterface.ObterPorIdAsync(id);
             if (usuario != null)
             {
-                // Se encontrar, remove através da interface
-                await _usuarioInterface.RemoverAsync(usuario);
+                // Se encontrar, desativa através da interface
+                await _usuarioInterface.DesativarAsync(usuario.Id);
             }
         }
 

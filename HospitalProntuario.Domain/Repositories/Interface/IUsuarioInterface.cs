@@ -14,5 +14,7 @@ namespace HospitalProntuario.Domain.Repositories.Interface
         Task AdicionarAsync(Usuario usuario, string senhaPura);
         Task AtualizarAsync(Usuario usuario);
         Task DesativarAsync(int id);
+
+        Task<Usuario> ObterPorEmailAsync(string email);
     }
 }
