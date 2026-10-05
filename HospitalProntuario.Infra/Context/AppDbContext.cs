@@ -1,4 +1,5 @@
 ﻿using HospitalProntuario.Domain.Domain;
+using HospitalProntuario.Domain.Domain.Usuario;
 using HospitalProntuario.Infra.Mappings;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -34,6 +35,8 @@ namespace HospitalProntuario.Infra.Context
 
         public DbSet<Recepcionista> Recepcionistas { get; set; }
 
+        public DbSet<Usuario> Usuarios { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new PacienteMapping());
@@ -44,6 +47,7 @@ namespace HospitalProntuario.Infra.Context
             modelBuilder.ApplyConfiguration(new PagamentoMapping());
             modelBuilder.ApplyConfiguration(new PlanoSaudeMapping());
             modelBuilder.ApplyConfiguration(new RecepcionistaMapping());
+            modelBuilder.ApplyConfiguration(new UsuarioMapping());
 
             // Registra automaticamente todas as classes que implementam IEntityTypeConfiguration neste assembly
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
