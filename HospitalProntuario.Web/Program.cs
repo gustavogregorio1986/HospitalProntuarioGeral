@@ -23,6 +23,7 @@ builder.Services.AddScoped<IPacienteRepository, PacienteRepository>();
 builder.Services.AddScoped<IPagamentoRepository, PagamentoRepository>();
 builder.Services.AddScoped<IPlanoSaudeRepository, PlanoSaudeRepository>();
 builder.Services.AddScoped<IRecepcionistaRepository, RecepcionistaRepository>();
+builder.Services.AddScoped<IUsuarioInterface, UsuarioRepository>();
 
 
 builder.Services.AddScoped<IPlanoSaudeService, PlanoSaudeService>();
@@ -33,6 +34,7 @@ builder.Services.AddScoped<IMedicoService, MedicoService>();
 builder.Services.AddScoped<IPagamentoService, PagamentoService>();
 builder.Services.AddScoped<IPacienteService, PacienteService>();
 builder.Services.AddScoped<IRecepcionistaService, RecepcionistaService>();
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 
 var app = builder.Build();
 
